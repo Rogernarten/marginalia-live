@@ -4,8 +4,8 @@
 itself, Jane Austen, the Regency, the Napoleonic Wars, Bath, Derbyshire…) and watch Wikipedia
 edits to their pages arrive as they happen, without refreshing.
 
-- **Live:** _Vercel URL goes here_
-- **Code:** _GitHub URL goes here_
+- **Live:** https://marginalia-live.vercel.app
+- **Code:** https://github.com/Rogernarten/marginalia-live
 - Companion to [Marginalia](https://marginalia-fullstack-eight.vercel.app) (Assignment 4), the
   reading guide. Design, Build, Ship · Assignment 5: Live Data System.
 
@@ -65,6 +65,25 @@ npm run test:worker
 
 The worker and its schedule are deployed to Supabase through the Supabase MCP server; the secret
 key never leaves Supabase.
+
+## What testing and the logs found
+
+- **The edit rate was wrong in the plan.** I first wrote about 80 edits every 10 seconds. The first
+  deployed run, reading the minute before it, scanned 96: it's about 80 a minute.
+- **The worker test caught a wrong count.** I expected 284 pages linked from *Pride and
+  Prejudice*; it's 282, because two links go to articles that don't exist and the worker skips
+  them by design. The test now checks that too.
+- **Pushes arrived empty.** Each Realtime message had `errors: ["Error 401: Unauthorized"]` and
+  no row, so the page said "The last check failed, NaN days ago". The page had joined Realtime
+  with the publishable key before Clerk's token was in place. It now joins as the reader.
+- **The page stopped after the server closed its channel** (`phx_close`, once). It now joins again
+  after 2 seconds, checked by faking a `phx_close` through a proxied socket.
+- **After sleep, the page came back with an expired token** ("InvalidJWTToken: Token has expired
+  516 seconds ago"). It now asks for a new token as soon as Realtime refuses one, instead of at
+  the next heartbeat.
+- **In development the page said "Live updates paused" at once.** React mounts twice there, and
+  `channel("live")` handed back the channel still closing from the first mount. Each join now
+  uses a new channel name.
 
 ## Free tier
 
