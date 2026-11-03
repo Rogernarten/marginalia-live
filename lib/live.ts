@@ -1,7 +1,7 @@
 "use client";
 
 import { useAuth } from "@clerk/nextjs";
-import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import { createClient, type RealtimeChannel, type SupabaseClient } from "@supabase/supabase-js";
 import { useCallback, useEffect, useState } from "react";
 
 // Everything the live page reads, straight from Supabase with the reader's Clerk token.
@@ -32,7 +32,13 @@ const newestFirst = (a: Edit, b: Edit) => b.edited_at.localeCompare(a.edited_at)
 
 // One client for the page. Realtime asks for the token on connect and on every heartbeat, so a
 // Clerk token that expires (they last about a minute) is replaced on its own.
-let getToken: () => Promise<string | null> = async () => null;
+//
+// The client is made during the first render, before any effect runs, and asks for a token
+// straight away. So until useAuth's getToken is in place, read the session Clerk has already
+// loaded (this page only renders once the reader is signed in). Without it, Realtime joined as
+// anonymous and every push came back "Error 401: Unauthorized".
+type ClerkGlobal = { Clerk?: { session?: { getToken(): Promise<string | null> } | null } };
+let getToken: () => Promise<string | null> = async () => (await (globalThis as ClerkGlobal).Clerk?.session?.getToken()) ?? null;
 let client: SupabaseClient | null = null;
 function supabase() {
   client ??= createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!, {
@@ -94,35 +100,43 @@ export function useLive() {
   useEffect(() => {
     let wasLost = false;
     let mounted = true;
-    // A new name each time: db.channel() hands back an existing channel with the same name,
-    // even one still closing from the last mount (React runs effects twice in development).
-    const channel = db
-      .channel(`live:${crypto.randomUUID()}`)
-      .on("postgres_changes", { event: "INSERT", schema: "public", table: "edits" }, (payload) => {
-        const edit = payload.new as Edit;
-        setEdits((list) => (list && !list.some((e) => e.rev_id === edit.rev_id) ? [edit, ...list].sort(newestFirst).slice(0, FEED_SIZE) : list));
-        setArrived((list) => [...list.slice(-19), edit]);
-      })
-      .on("postgres_changes", { event: "INSERT", schema: "public", table: "worker_runs" }, (payload) => {
-        setRun(payload.new as Run);
-      })
-      .subscribe((status, err) => {
-        if (err) console.error(`[live] realtime ${status}: ${err.message}`);
-        // Closing this channel on unmount isn't a lost connection.
-        if (!mounted) return;
-        if (status === "SUBSCRIBED") {
-          setConnection("live");
-          // Back after a drop: fetch what was pushed while we weren't listening.
-          if (wasLost) void load();
-          wasLost = false;
-        } else if (status === "CHANNEL_ERROR" || status === "TIMED_OUT" || status === "CLOSED") {
-          setConnection("lost");
-          wasLost = true;
-        }
-      });
+    let channel: RealtimeChannel | null = null;
+    void (async () => {
+      // Join as the reader: Realtime checks every push against the token sent when joining.
+      await db.realtime.setAuth();
+      if (!mounted) return;
+      // A new name each time: db.channel() hands back an existing channel with the same name,
+      // even one still closing from the last mount (React runs effects twice in development).
+      channel = db
+        .channel(`live:${crypto.randomUUID()}`)
+        .on("postgres_changes", { event: "INSERT", schema: "public", table: "edits" }, (payload) => {
+          if (payload.errors) return console.error("[live] realtime edit refused:", payload.errors);
+          const edit = payload.new as Edit;
+          setEdits((list) => (list && !list.some((e) => e.rev_id === edit.rev_id) ? [edit, ...list].sort(newestFirst).slice(0, FEED_SIZE) : list));
+          setArrived((list) => [...list.slice(-19), edit]);
+        })
+        .on("postgres_changes", { event: "INSERT", schema: "public", table: "worker_runs" }, (payload) => {
+          if (payload.errors) return console.error("[live] realtime run refused:", payload.errors);
+          setRun(payload.new as Run);
+        })
+        .subscribe((status, err) => {
+          if (err) console.error(`[live] realtime ${status}: ${err.message}`);
+          // Closing this channel on unmount isn't a lost connection.
+          if (!mounted) return;
+          if (status === "SUBSCRIBED") {
+            setConnection("live");
+            // Back after a drop: fetch what was pushed while we weren't listening.
+            if (wasLost) void load();
+            wasLost = false;
+          } else if (status === "CHANNEL_ERROR" || status === "TIMED_OUT" || status === "CLOSED") {
+            setConnection("lost");
+            wasLost = true;
+          }
+        });
+    })();
     return () => {
       mounted = false;
-      void db.removeChannel(channel);
+      if (channel) void db.removeChannel(channel);
     };
   }, [db, load]);
 
