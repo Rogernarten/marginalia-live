@@ -5,7 +5,7 @@
 // keep the edits to pages in a topic → insert the ones not saved yet → record the run.
 
 export const API = "https://en.wikipedia.org/w/api.php";
-/** At most this many requests of 500 changes per run (about a minute of English Wikipedia). */
+/** At most this many requests of 500 changes per run: about 19 minutes of English Wikipedia. */
 export const MAX_PAGES = 3;
 /** After a long outage, skip ahead instead of reading hours of backlog. */
 export const MAX_GAP_MS = 10 * 60 * 1000;

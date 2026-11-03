@@ -15,7 +15,7 @@ Drawn before any code was written ([AGENTS.md](AGENTS.md) has what breaks if a p
 
 ```mermaid
 flowchart LR
-  WP["Wikipedia<br/>recent changes API<br/>~80 article edits every 10 s"]
+  WP["Wikipedia<br/>recent changes API<br/>~80 article edits a minute"]
   CRON["Supabase Cron<br/>every 10 s"]
   FN["Edge Function<br/>wiki-worker<br/>(secret key, on Supabase)"]
   subgraph DB["Supabase Postgres"]
@@ -45,7 +45,7 @@ flowchart LR
 
 | | |
 |---|---|
-| **Source** | Wikipedia's [recent changes](https://www.mediawiki.org/wiki/API:RecentChanges), no key. English Wikipedia makes about 8 article edits a second; about 16 an hour land in these 10 topics. Two calls compared in [docs/source.md](docs/source.md). |
+| **Source** | Wikipedia's [recent changes](https://www.mediawiki.org/wiki/API:RecentChanges), no key. English Wikipedia makes about 80 article edits a minute; about 16 an hour land in these 10 topics. Two calls compared in [docs/source.md](docs/source.md). |
 | **Topics** | A hub article and every article it links to (Wikipedia's "Related changes"): 10 hubs, about 7,300 pages. |
 | **Worker** | [`supabase/functions/wiki-worker`](supabase/functions/wiki-worker): an Edge Function that Supabase Cron calls every 10 seconds. It reads changes since the last cursor, keeps those to pages in a topic, inserts only edits it hasn't saved (`on conflict (rev_id) do nothing`) and records every run in `worker_runs`, failed ones too. It writes with the secret key Supabase gives it on its servers. |
 | **Data** | [Migrations](supabase/migrations/): `topics`, `topic_pages`, `follows`, `edits`, `worker_runs`, RLS on all five. You see only your own follows, and only edits in topics you follow: the page never filters, RLS does. |

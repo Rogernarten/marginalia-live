@@ -21,7 +21,7 @@ Drawn before any code was written. Each arrow says what one part sends to the ne
 
 ```mermaid
 flowchart LR
-  WP["Wikipedia<br/>recent changes API<br/>~80 article edits every 10 s"]
+  WP["Wikipedia<br/>recent changes API<br/>~80 article edits a minute"]
   CRON["Supabase Cron<br/>every 10 s"]
   FN["Edge Function<br/>wiki-worker<br/>(secret key, on Supabase)"]
   subgraph DB["Supabase Postgres"]
@@ -68,10 +68,10 @@ What breaks if one part changes what it sends:
 `GET https://en.wikipedia.org/w/api.php?action=query&list=recentchanges&rcdir=newer&rcstart=…&rcnamespace=0&rctype=edit|new&rclimit=500&rcprop=title|ids|sizes|timestamp|user|comment|flags`
 
 No key. Send a `User-Agent` that names the app and the repository. English Wikipedia makes about
-8 article edits a second, so one request of up to 500 covers 10 seconds with room to spare. If
-there are more, follow `continue.rccontinue`, at most 3 requests per run. Fields we keep:
-`rcid` (cursor), `revid` (primary key), `title`, `user`, `bot`, `new`, `oldlen`/`newlen`
-(size change), `timestamp`, `comment`. Details and two calls compared: `docs/source.md`.
+80 article edits a minute (13 every 10 seconds), so one request of up to 500 covers a run many
+times over. If there are more, follow `continue.rccontinue`, at most 3 requests per run.
+Fields we keep: `rcid` (cursor), `revid` (primary key), `title`, `user`, `bot`, `new`,
+`oldlen`/`newlen` (size change), `timestamp`, `comment`. Details and two calls compared: `docs/source.md`.
 
 A **topic** is a hub article and every article it links to, like Wikipedia's "Related changes".
 The worker refreshes one hub's links (`prop=links`) per run when they're over 6 hours old.
