@@ -36,8 +36,9 @@ Called twice on 3 November 2026, 15 minutes apart, before anything was built.
 | newest `rcid` | 2086393097 | 2086396377 |
 | newest `timestamp` | 18:40:40Z | 18:55:27Z |
 
-In those 15 minutes, English Wikipedia had **1,187 article edits** (137 by bots): about 80 every
-10 seconds, which one request of 500 covers.
+In those 15 minutes, English Wikipedia had **1,187 article edits** (137 by bots): about 80 a
+minute, or 13 every 10 seconds, which one request of 500 covers many times over. The deployed
+worker saw the same rate: its first run, covering a minute, scanned 96.
 
 Of those, **4 were to pages in the 10 topics** (7,316 pages in all):
 

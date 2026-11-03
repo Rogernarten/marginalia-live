@@ -3,6 +3,8 @@
 -- hand has worked.
 
 create extension if not exists pg_cron with schema pg_catalog;
+grant usage on schema cron to postgres;
+grant all privileges on all tables in schema cron to postgres;
 
 -- About 260,000 calls a month; the free plan includes 500,000.
 select cron.schedule(

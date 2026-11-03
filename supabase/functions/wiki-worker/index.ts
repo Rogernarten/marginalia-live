@@ -13,13 +13,12 @@ const TIMEOUT_MS = 6000;
 
 const db = createClient(Deno.env.get("SUPABASE_URL")!, secretKey(), { auth: { persistSession: false } });
 
-/** The legacy service-role key if the project has one, else the new default secret key. */
+/** The project's default secret key. The legacy service-role key (retired at the end of 2026) only if there isn't one. */
 function secretKey() {
-  const legacy = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
-  if (legacy) return legacy;
   const keys = JSON.parse(Deno.env.get("SUPABASE_SECRET_KEYS") ?? "{}") as Record<string, string>;
-  if (!keys.default) throw new Error("No secret key in the function's environment");
-  return keys.default;
+  const key = keys.default ?? Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+  if (!key) throw new Error("No secret key in the function's environment");
+  return key;
 }
 
 async function fetchJson(url: string) {
