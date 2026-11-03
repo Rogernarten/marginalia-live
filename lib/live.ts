@@ -101,13 +101,32 @@ export function useLive() {
     let wasLost = false;
     let mounted = true;
     let channel: RealtimeChannel | null = null;
-    void (async () => {
-      // Join as the reader: Realtime checks every push against the token sent when joining.
-      await db.realtime.setAuth();
+    let retry: number | undefined;
+
+    // realtime-js rejoins by itself after an error or a timeout, but not when the server closes
+    // the channel (phx_close, seen once in testing). Then join again on a new channel.
+    function joinAgain(after: number) {
+      window.clearTimeout(retry);
+      retry = window.setTimeout(() => {
+        const old = channel;
+        channel = null;
+        if (old) void db.removeChannel(old);
+        void join();
+      }, after);
+    }
+
+    async function join() {
+      try {
+        // Join as the reader: Realtime checks every push against the token sent when joining.
+        await db.realtime.setAuth();
+      } catch (e) {
+        console.error("[live] couldn't get a token for Realtime:", (e as Error).message);
+        return joinAgain(5000);
+      }
       if (!mounted) return;
       // A new name each time: db.channel() hands back an existing channel with the same name,
       // even one still closing from the last mount (React runs effects twice in development).
-      channel = db
+      const ch = db
         .channel(`live:${crypto.randomUUID()}`)
         .on("postgres_changes", { event: "INSERT", schema: "public", table: "edits" }, (payload) => {
           if (payload.errors) return console.error("[live] realtime edit refused:", payload.errors);
@@ -118,24 +137,29 @@ export function useLive() {
         .on("postgres_changes", { event: "INSERT", schema: "public", table: "worker_runs" }, (payload) => {
           if (payload.errors) return console.error("[live] realtime run refused:", payload.errors);
           setRun(payload.new as Run);
-        })
-        .subscribe((status, err) => {
-          if (err) console.error(`[live] realtime ${status}: ${err.message}`);
-          // Closing this channel on unmount isn't a lost connection.
-          if (!mounted) return;
-          if (status === "SUBSCRIBED") {
-            setConnection("live");
-            // Back after a drop: fetch what was pushed while we weren't listening.
-            if (wasLost) void load();
-            wasLost = false;
-          } else if (status === "CHANNEL_ERROR" || status === "TIMED_OUT" || status === "CLOSED") {
-            setConnection("lost");
-            wasLost = true;
-          }
         });
-    })();
+      channel = ch;
+      ch.subscribe((status, err) => {
+        if (err) console.error(`[live] realtime ${status}: ${err.message}`);
+        // A channel we closed ourselves (on unmount, or to join again) isn't a lost connection.
+        if (!mounted || ch !== channel) return;
+        if (status === "SUBSCRIBED") {
+          setConnection("live");
+          // Back after a drop: fetch what was pushed while we weren't listening.
+          if (wasLost) void load();
+          wasLost = false;
+        } else if (status === "CHANNEL_ERROR" || status === "TIMED_OUT" || status === "CLOSED") {
+          setConnection("lost");
+          wasLost = true;
+          if (status === "CLOSED") joinAgain(2000);
+        }
+      });
+    }
+
+    void join();
     return () => {
       mounted = false;
+      window.clearTimeout(retry);
       if (channel) void db.removeChannel(channel);
     };
   }, [db, load]);
