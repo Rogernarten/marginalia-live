@@ -1,0 +1,1656 @@
+{
+"batchcomplete": true,
+"limits": {
+"links": 500
+},
+"query": {
+"redirects": [
+{
+"from": "New York Times",
+"to": "The New York Times"
+},
+{
+"from": "Common Law",
+"to": "Common law"
+},
+{
+"from": "Moby Dick",
+"to": "Moby-Dick"
+},
+{
+"from": "Hypochondriac",
+"to": "Hypochondria"
+},
+{
+"from": "Justices of the Peace",
+"to": "Justice of the peace"
+},
+{
+"from": "Feme sole",
+"to": "Coverture"
+},
+{
+"from": "C.E. Brock",
+"to": "C. E. Brock"
+},
+{
+"from": "Trustees",
+"to": "Trustee"
+},
+{
+"from": "Huffington Post",
+"to": "HuffPost"
+},
+{
+"from": "Anne Isabella Milbanke",
+"to": "Lady Byron"
+},
+{
+"from": "Mr Darcy",
+"to": "Mr. Darcy"
+},
+{
+"from": "Waverley Novels",
+"to": "Waverley novels"
+},
+{
+"from": "Mr Bennet",
+"to": "Bennet family",
+"tofragment": "Mr Bennet"
+},
+{
+"from": "Prebendaries",
+"to": "Prebendary"
+},
+{
+"from": "Tenant for life",
+"to": "Life estate"
+},
+{
+"from": "Entailed",
+"to": "Fee tail"
+},
+{
+"from": "Overseers of the Poor",
+"to": "Overseer of the poor"
+},
+{
+"from": "Fanny Burney",
+"to": "Frances Burney"
+},
+{
+"from": "Fitzwilliam Darcy, Gentleman",
+"to": "Pamela Aidan"
+},
+{
+"from": "Duty and Desire",
+"to": "Pamela Aidan"
+},
+{
+"from": "These Three Remain",
+"to": "Pamela Aidan"
+},
+{
+"from": "Jane Bennet",
+"to": "Bennet family",
+"tofragment": "Jane Bennet"
+},
+{
+"from": "TIME",
+"to": "Time (magazine)"
+},
+{
+"from": "Entail",
+"to": "Fee tail"
+},
+{
+"from": "Janet M. Todd",
+"to": "Janet Todd"
+},
+{
+"from": "Dowries",
+"to": "Dowry"
+},
+{
+"from": "Frances Lincoln Publishers",
+"to": "Frances Lincoln",
+"tofragment": "Frances Lincoln Publishers"
+},
+{
+"from": "Fitzwilliam Darcy",
+"to": "Mr. Darcy"
+},
+{
+"from": "Epistolary novels",
+"to": "Epistolary novel"
+},
+{
+"from": "YouTube channel",
+"to": "YouTube",
+"tofragment": "Features"
+},
+{
+"from": "Strict settlement",
+"to": "Settled Land Acts"
+},
+{
+"from": "Lydia Bennet",
+"to": "Bennet family",
+"tofragment": "Lydia Bennet"
+},
+{
+"from": "Marriage settlement",
+"to": "Marriage settlement (England)"
+},
+{
+"from": "Perpetual Curate",
+"to": "Perpetual curate"
+},
+{
+"from": "ISBN (identifier)",
+"to": "ISBN"
+},
+{
+"from": "PMID (identifier)",
+"to": "PubMed",
+"tofragment": "PubMed identifier"
+},
+{
+"from": "ISSN (identifier)",
+"to": "ISSN"
+},
+{
+"from": "Landed gentleman",
+"to": "Landed gentry"
+},
+{
+"from": "Mashup (book)",
+"to": "Mashup novel"
+},
+{
+"from": "S2CID (identifier)",
+"to": "Semantic Scholar",
+"tofragment": "S2CID"
+},
+{
+"from": "Doi (identifier)",
+"to": "Digital object identifier"
+},
+{
+"from": "PMC (identifier)",
+"to": "PubMed Central",
+"tofragment": "PMCID"
+},
+{
+"from": "Hdl (identifier)",
+"to": "Handle System"
+},
+{
+"from": "OCLC (identifier)",
+"to": "OCLC",
+"tofragment": "Identifiers and linked data"
+},
+{
+"from": "Bibcode (identifier)",
+"to": "Bibcode"
+},
+{
+"from": "JSTOR (identifier)",
+"to": "JSTOR",
+"tofragment": "Content"
+},
+{
+"from": "LCC (identifier)",
+"to": "Library of Congress Classification"
+},
+{
+"from": "George Austen (clergyman)",
+"to": "George Austen (cleric)"
+},
+{
+"from": "IMDb (identifier)",
+"to": "IMDb"
+},
+{
+"from": "Mrs Bennet",
+"to": "Bennet family",
+"tofragment": "Mrs Bennet"
+},
+{
+"from": "Mary Bennet",
+"to": "Bennet family",
+"tofragment": "Mary Bennet"
+},
+{
+"from": "Kitty Bennet",
+"to": "Bennet family",
+"tofragment": "Catherine \"Kitty\" Bennet"
+},
+{
+"from": "Mr Fitzwilliam Darcy",
+"to": "Mr. Darcy"
+},
+{
+"from": "Mr Collins",
+"to": "Mr William Collins"
+}
+],
+"pages": [
+{
+"ns": 0,
+"title": "Pride and Prejudice (1952 TV series)",
+"missing": true
+},
+{
+"ns": 0,
+"title": "Marcelo Faria",
+"missing": true
+},
+{
+"pageid": 3079,
+"ns": 0,
+"title": "Australian Broadcasting Corporation"
+},
+{
+"pageid": 4887,
+"ns": 0,
+"title": "British Army"
+},
+{
+"pageid": 5254,
+"ns": 0,
+"title": "Common law"
+},
+{
+"pageid": 5658,
+"ns": 0,
+"title": "Human cannibalism"
+},
+{
+"pageid": 5955,
+"ns": 0,
+"title": "Church of England"
+},
+{
+"pageid": 6532,
+"ns": 0,
+"title": "Charlotte Brontë"
+},
+{
+"pageid": 8699,
+"ns": 0,
+"title": "Dewey Decimal Classification"
+},
+{
+"pageid": 10011,
+"ns": 0,
+"title": "Epistolary novel"
+},
+{
+"pageid": 13986,
+"ns": 0,
+"title": "Hertfordshire"
+},
+{
+"pageid": 14919,
+"ns": 0,
+"title": "ISBN"
+},
+{
+"pageid": 15600,
+"ns": 0,
+"title": "James Joyce"
+},
+{
+"pageid": 15782,
+"ns": 0,
+"title": "Jane Austen"
+},
+{
+"pageid": 16766,
+"ns": 0,
+"title": "Kent"
+},
+{
+"pageid": 17867,
+"ns": 0,
+"title": "London"
+},
+{
+"pageid": 18327,
+"ns": 0,
+"title": "Library of Congress Classification"
+},
+{
+"pageid": 19859,
+"ns": 0,
+"title": "Moby-Dick"
+},
+{
+"pageid": 20622,
+"ns": 0,
+"title": "Militia"
+},
+{
+"pageid": 22641,
+"ns": 0,
+"title": "Oxford English Dictionary"
+},
+{
+"pageid": 23301,
+"ns": 0,
+"title": "Project Gutenberg"
+},
+{
+"pageid": 27490,
+"ns": 0,
+"title": "Sense and Sensibility"
+},
+{
+"pageid": 27884,
+"ns": 0,
+"title": "Walter Scott"
+},
+{
+"pageid": 28222,
+"ns": 0,
+"title": "Sydney Opera House"
+},
+{
+"pageid": 29798,
+"ns": 0,
+"title": "The Lord of the Rings"
+},
+{
+"pageid": 30680,
+"ns": 0,
+"title": "The New York Times"
+},
+{
+"pageid": 31600,
+"ns": 0,
+"title": "Time (magazine)"
+},
+{
+"pageid": 33276,
+"ns": 0,
+"title": "W. H. Auden"
+},
+{
+"pageid": 36947,
+"ns": 0,
+"title": "Indemnity"
+},
+{
+"pageid": 41522,
+"ns": 0,
+"title": "Northanger Abbey"
+},
+{
+"pageid": 43675,
+"ns": 0,
+"title": "Laurence Olivier"
+},
+{
+"pageid": 46396,
+"ns": 0,
+"title": "Ninja"
+},
+{
+"pageid": 48518,
+"ns": 0,
+"title": "Oxford University Press"
+},
+{
+"pageid": 48594,
+"ns": 0,
+"title": "Samuel Johnson"
+},
+{
+"pageid": 56578,
+"ns": 0,
+"title": "Frances Burney"
+},
+{
+"pageid": 57344,
+"ns": 0,
+"title": "Emma (novel)"
+},
+{
+"pageid": 58249,
+"ns": 0,
+"title": "Earl"
+},
+{
+"pageid": 63534,
+"ns": 0,
+"title": "Greer Garson"
+},
+{
+"pageid": 68315,
+"ns": 0,
+"title": "Protagonist"
+},
+{
+"pageid": 68722,
+"ns": 0,
+"title": "Bridget Jones's Diary (novel)"
+},
+{
+"pageid": 71070,
+"ns": 0,
+"title": "Derbyshire"
+},
+{
+"pageid": 71898,
+"ns": 0,
+"title": "Amazon Standard Identification Number"
+},
+{
+"pageid": 73199,
+"ns": 0,
+"title": "Cambridge University Press"
+},
+{
+"pageid": 93985,
+"ns": 0,
+"title": "Royal Marines"
+},
+{
+"pageid": 126641,
+"ns": 0,
+"title": "Rochester, New York"
+},
+{
+"pageid": 154450,
+"ns": 0,
+"title": "Mark Twain"
+},
+{
+"pageid": 156778,
+"ns": 0,
+"title": "Hypochondria"
+},
+{
+"pageid": 158097,
+"ns": 0,
+"title": "Shirley Jackson"
+},
+{
+"pageid": 161757,
+"ns": 0,
+"title": "P. D. James"
+},
+{
+"pageid": 162998,
+"ns": 0,
+"title": "Celia Johnson"
+},
+{
+"pageid": 163645,
+"ns": 0,
+"title": "Joseph Addison"
+},
+{
+"pageid": 164920,
+"ns": 0,
+"title": "Joseph Hall (bishop)"
+},
+{
+"pageid": 170409,
+"ns": 0,
+"title": "Colin Firth"
+},
+{
+"pageid": 172246,
+"ns": 0,
+"title": "University of Münster"
+},
+{
+"pageid": 173996,
+"ns": 0,
+"title": "Jeremy Taylor"
+},
+{
+"pageid": 175537,
+"ns": 0,
+"title": "Netflix"
+},
+{
+"pageid": 176956,
+"ns": 0,
+"title": "The History of Tom Jones, a Foundling"
+},
+{
+"pageid": 177711,
+"ns": 0,
+"title": "Vicar"
+},
+{
+"pageid": 185250,
+"ns": 0,
+"title": "Curate"
+},
+{
+"pageid": 208463,
+"ns": 0,
+"title": "USA Today"
+},
+{
+"pageid": 212157,
+"ns": 0,
+"title": "BBC One"
+},
+{
+"pageid": 213978,
+"ns": 0,
+"title": "George Henry Lewes"
+},
+{
+"pageid": 216262,
+"ns": 0,
+"title": "JSTOR"
+},
+{
+"pageid": 234516,
+"ns": 0,
+"title": "Dowry"
+},
+{
+"pageid": 234930,
+"ns": 0,
+"title": "ISSN"
+},
+{
+"pageid": 246280,
+"ns": 0,
+"title": "Polly Bergen"
+},
+{
+"pageid": 249897,
+"ns": 0,
+"title": "Keira Knightley"
+},
+{
+"pageid": 256695,
+"ns": 0,
+"title": "Fee tail"
+},
+{
+"pageid": 256698,
+"ns": 0,
+"title": "Life estate"
+},
+{
+"pageid": 257098,
+"ns": 0,
+"title": "Anglo-Normans"
+},
+{
+"pageid": 260962,
+"ns": 0,
+"title": "Justice of the peace"
+},
+{
+"pageid": 277696,
+"ns": 0,
+"title": "The Scarlet Letter"
+},
+{
+"pageid": 293632,
+"ns": 0,
+"title": "Romance novel"
+},
+{
+"pageid": 347822,
+"ns": 0,
+"title": "Persuasion (novel)"
+},
+{
+"pageid": 420342,
+"ns": 0,
+"title": "Wikisource"
+},
+{
+"pageid": 422994,
+"ns": 0,
+"title": "Digital object identifier"
+},
+{
+"pageid": 503009,
+"ns": 0,
+"title": "PubMed"
+},
+{
+"pageid": 506701,
+"ns": 0,
+"title": "Trustee"
+},
+{
+"pageid": 537149,
+"ns": 0,
+"title": "Arts Centre Melbourne"
+},
+{
+"pageid": 559202,
+"ns": 0,
+"title": "Lady Byron"
+},
+{
+"pageid": 575803,
+"ns": 0,
+"title": "The Big Read"
+},
+{
+"pageid": 630585,
+"ns": 0,
+"title": "St James's Theatre"
+},
+{
+"pageid": 645513,
+"ns": 0,
+"title": "Fire Island"
+},
+{
+"pageid": 717579,
+"ns": 0,
+"title": "Helen Fielding"
+},
+{
+"pageid": 772540,
+"ns": 0,
+"title": "TV Globo"
+},
+{
+"pageid": 804616,
+"ns": 0,
+"title": "Hayley Mills"
+},
+{
+"pageid": 873137,
+"ns": 0,
+"title": "Landed gentry"
+},
+{
+"pageid": 883885,
+"ns": 0,
+"title": "OCLC"
+},
+{
+"pageid": 892004,
+"ns": 0,
+"title": "Anna Quindlen"
+},
+{
+"pageid": 913971,
+"ns": 0,
+"title": "Sanditon"
+},
+{
+"pageid": 914549,
+"ns": 0,
+"title": "Lady Susan"
+},
+{
+"pageid": 914594,
+"ns": 0,
+"title": "The Beautifull Cassandra"
+},
+{
+"pageid": 937536,
+"ns": 0,
+"title": "Matthew Macfadyen"
+},
+{
+"pageid": 947209,
+"ns": 0,
+"title": "Horace Smith (poet)"
+},
+{
+"pageid": 961559,
+"ns": 0,
+"title": "Farley Granger"
+},
+{
+"pageid": 971746,
+"ns": 0,
+"title": "Michael Barry (television producer)"
+},
+{
+"pageid": 977774,
+"ns": 0,
+"title": "Pemberley"
+},
+{
+"pageid": 979432,
+"ns": 0,
+"title": "Fitzwilliam (surname)"
+},
+{
+"pageid": 997572,
+"ns": 0,
+"title": "Regency romance"
+},
+{
+"pageid": 1005587,
+"ns": 0,
+"title": "Jennifer Ehle"
+},
+{
+"pageid": 1008284,
+"ns": 0,
+"title": "Pride and Prejudice (1995 TV series)"
+},
+{
+"pageid": 1038380,
+"ns": 0,
+"title": "Benefice"
+},
+{
+"pageid": 1043351,
+"ns": 0,
+"title": "Coverture"
+},
+{
+"pageid": 1067941,
+"ns": 0,
+"title": "Prebendary"
+},
+{
+"pageid": 1074161,
+"ns": 0,
+"title": "Hermione Gingold"
+},
+{
+"pageid": 1074922,
+"ns": 0,
+"title": "Drawing room"
+},
+{
+"pageid": 1137578,
+"ns": 0,
+"title": "Bride and Prejudice"
+},
+{
+"pageid": 1217044,
+"ns": 0,
+"title": "C. E. Brock"
+},
+{
+"pageid": 1305348,
+"ns": 0,
+"title": "Vlog"
+},
+{
+"pageid": 1438001,
+"ns": 0,
+"title": "Curtis Sittenfeld"
+},
+{
+"pageid": 1571869,
+"ns": 0,
+"title": "Carl Davis"
+},
+{
+"pageid": 1643983,
+"ns": 0,
+"title": "Testator"
+},
+{
+"pageid": 1657520,
+"ns": 0,
+"title": "Jointure"
+},
+{
+"pageid": 1774803,
+"ns": 0,
+"title": "Bridget Jones's Diary"
+},
+{
+"pageid": 1890505,
+"ns": 0,
+"title": "HuffPost"
+},
+{
+"pageid": 1953064,
+"ns": 0,
+"title": "First Impressions (musical)"
+},
+{
+"pageid": 1964954,
+"ns": 0,
+"title": "University of Chicago Press"
+},
+{
+"pageid": 1996200,
+"ns": 0,
+"title": "Mary Poovey"
+},
+{
+"pageid": 2063627,
+"ns": 0,
+"title": "Legal profession"
+},
+{
+"pageid": 2081497,
+"ns": 0,
+"title": "Euros Lyn"
+},
+{
+"pageid": 2184330,
+"ns": 0,
+"title": "Sophie Thompson"
+},
+{
+"pageid": 2312056,
+"ns": 0,
+"title": "Pride & Prejudice (2005 film)"
+},
+{
+"pageid": 2319323,
+"ns": 0,
+"title": "Elizabeth Bennet"
+},
+{
+"pageid": 2353884,
+"ns": 0,
+"title": "Kahiin to Hoga"
+},
+{
+"pageid": 2649257,
+"ns": 0,
+"title": "Pride and Prejudice (1940 film)"
+},
+{
+"pageid": 2649312,
+"ns": 0,
+"title": "Pride & Prejudice: A Latter-Day Comedy"
+},
+{
+"pageid": 2775325,
+"ns": 0,
+"title": "PubMed Central"
+},
+{
+"pageid": 2796432,
+"ns": 0,
+"title": "Francis Austen"
+},
+{
+"pageid": 2855554,
+"ns": 0,
+"title": "IMDb"
+},
+{
+"pageid": 3033993,
+"ns": 0,
+"title": "Becoming Jane"
+},
+{
+"pageid": 3048972,
+"ns": 0,
+"title": "Elizabeth Garvie"
+},
+{
+"pageid": 3076483,
+"ns": 0,
+"title": "Free indirect speech"
+},
+{
+"pageid": 3166786,
+"ns": 0,
+"title": "Pride and Prejudice (disambiguation)"
+},
+{
+"pageid": 3211831,
+"ns": 0,
+"title": "Hugh Williams"
+},
+{
+"pageid": 3219562,
+"ns": 0,
+"title": "The Morning Chronicle"
+},
+{
+"pageid": 3345384,
+"ns": 0,
+"title": "Mansfield Park"
+},
+{
+"pageid": 3524766,
+"ns": 0,
+"title": "YouTube"
+},
+{
+"pageid": 3651003,
+"ns": 0,
+"title": "Henley Standard"
+},
+{
+"pageid": 3658093,
+"ns": 0,
+"title": "Frances Lincoln"
+},
+{
+"pageid": 3726095,
+"ns": 0,
+"title": "Johns Hopkins University Press"
+},
+{
+"pageid": 3897278,
+"ns": 0,
+"title": "Waverley novels"
+},
+{
+"pageid": 4006014,
+"ns": 0,
+"title": "Thomas Langlois Lefroy"
+},
+{
+"pageid": 4372159,
+"ns": 0,
+"title": "LibriVox"
+},
+{
+"pageid": 4378340,
+"ns": 0,
+"title": "Settled Land Acts"
+},
+{
+"pageid": 4401207,
+"ns": 0,
+"title": "Music Box Theatre"
+},
+{
+"pageid": 4444257,
+"ns": 0,
+"title": "The A.V. Club"
+},
+{
+"pageid": 4641629,
+"ns": 0,
+"title": "Sam Riley"
+},
+{
+"pageid": 5223914,
+"ns": 0,
+"title": "Pride and Prejudice (1980 TV series)"
+},
+{
+"pageid": 5719490,
+"ns": 0,
+"title": "Love and Freindship"
+},
+{
+"pageid": 5772621,
+"ns": 0,
+"title": "The Watsons"
+},
+{
+"pageid": 5788227,
+"ns": 0,
+"title": "Mr. Darcy"
+},
+{
+"pageid": 6945397,
+"ns": 0,
+"title": "Mr. Darcy's Daughters"
+},
+{
+"pageid": 7324700,
+"ns": 0,
+"title": "Overseer of the poor"
+},
+{
+"pageid": 7386800,
+"ns": 0,
+"title": "Perpetual curate"
+},
+{
+"pageid": 7454549,
+"ns": 0,
+"title": "Beyond a Joke (Red Dwarf)"
+},
+{
+"pageid": 7650376,
+"ns": 0,
+"title": "List of literary adaptations of Pride and Prejudice"
+},
+{
+"pageid": 7679456,
+"ns": 0,
+"title": "Pride & Prejudice (soundtrack)"
+},
+{
+"pageid": 7802697,
+"ns": 0,
+"title": "David Rintoul"
+},
+{
+"pageid": 7931091,
+"ns": 0,
+"title": "Janet Todd"
+},
+{
+"pageid": 8308396,
+"ns": 0,
+"title": "An Assembly Such as This"
+},
+{
+"pageid": 8340390,
+"ns": 0,
+"title": "Thiago Lacerda"
+},
+{
+"pageid": 8696662,
+"ns": 0,
+"title": "Cassandra Austen"
+},
+{
+"pageid": 8814871,
+"ns": 0,
+"title": "Nadine Garner"
+},
+{
+"pageid": 8938071,
+"ns": 0,
+"title": "Catherine Hubback"
+},
+{
+"pageid": 9810476,
+"ns": 0,
+"title": "Zombie"
+},
+{
+"pageid": 11223004,
+"ns": 0,
+"title": "Whitney Matheson"
+},
+{
+"pageid": 11285952,
+"ns": 0,
+"title": "Pamela Aidan"
+},
+{
+"pageid": 11324152,
+"ns": 0,
+"title": "Juliet Barker"
+},
+{
+"pageid": 11704901,
+"ns": 0,
+"title": "Bernard J. Taylor"
+},
+{
+"pageid": 11848016,
+"ns": 0,
+"title": "Novel of manners"
+},
+{
+"pageid": 11908189,
+"ns": 0,
+"title": "Steve Hockensmith"
+},
+{
+"pageid": 11976483,
+"ns": 0,
+"title": "Pride and Prejudice (musical)"
+},
+{
+"pageid": 12076329,
+"ns": 0,
+"title": "Jane Austen Centre"
+},
+{
+"pageid": 12149206,
+"ns": 0,
+"title": "Claudia L. Johnson"
+},
+{
+"pageid": 12153219,
+"ns": 0,
+"title": "Reception history of Jane Austen"
+},
+{
+"pageid": 12185146,
+"ns": 0,
+"title": "Austenland"
+},
+{
+"pageid": 12968700,
+"ns": 0,
+"title": "Miss Austen Regrets"
+},
+{
+"pageid": 13951477,
+"ns": 0,
+"title": "Cecilia (Burney novel)"
+},
+{
+"pageid": 14092434,
+"ns": 0,
+"title": "Bibcode"
+},
+{
+"pageid": 14094357,
+"ns": 0,
+"title": "Adrianne Allen"
+},
+{
+"pageid": 14339252,
+"ns": 0,
+"title": "Timeline of Jane Austen"
+},
+{
+"pageid": 14416180,
+"ns": 0,
+"title": "Jane Austen in popular culture"
+},
+{
+"pageid": 14727869,
+"ns": 0,
+"title": "Janeite"
+},
+{
+"pageid": 14966594,
+"ns": 0,
+"title": "Burke"
+},
+{
+"pageid": 15021948,
+"ns": 0,
+"title": "Chawton House"
+},
+{
+"pageid": 15690014,
+"ns": 0,
+"title": "Janice Hadlow"
+},
+{
+"pageid": 15870439,
+"ns": 0,
+"title": "Motif (narrative)"
+},
+{
+"pageid": 16303134,
+"ns": 0,
+"title": "Commission (art)"
+},
+{
+"pageid": 16636712,
+"ns": 0,
+"title": "George Kitson Clark"
+},
+{
+"pageid": 16690255,
+"ns": 0,
+"title": "Lost in Austen"
+},
+{
+"pageid": 17566665,
+"ns": 0,
+"title": "Lord Byron"
+},
+{
+"pageid": 17706086,
+"ns": 0,
+"title": "Jane Austen's House Museum"
+},
+{
+"pageid": 17991324,
+"ns": 0,
+"title": "Social graces"
+},
+{
+"pageid": 18066201,
+"ns": 0,
+"title": "The History of England (Austen)"
+},
+{
+"pageid": 18114934,
+"ns": 0,
+"title": "De Burgh"
+},
+{
+"pageid": 18715278,
+"ns": 0,
+"title": "A Memoir of Jane Austen"
+},
+{
+"pageid": 19344654,
+"ns": 0,
+"title": "BBC"
+},
+{
+"pageid": 19801782,
+"ns": 0,
+"title": "Matt Smith"
+},
+{
+"pageid": 20053092,
+"ns": 0,
+"title": "Charles Austen"
+},
+{
+"pageid": 20807166,
+"ns": 0,
+"title": "Colin Keith-Johnston"
+},
+{
+"pageid": 20814585,
+"ns": 0,
+"title": "Journal of Inherited Metabolic Disease"
+},
+{
+"pageid": 21278924,
+"ns": 0,
+"title": "Small talk"
+},
+{
+"pageid": 22048289,
+"ns": 0,
+"title": "Handle System"
+},
+{
+"pageid": 22218319,
+"ns": 0,
+"title": "Pride and Prejudice and Zombies"
+},
+{
+"pageid": 22811671,
+"ns": 0,
+"title": "Seth Grahame-Smith"
+},
+{
+"pageid": 23501689,
+"ns": 0,
+"title": "Lost television broadcast"
+},
+{
+"pageid": 23538754,
+"ns": 0,
+"title": "Wayback Machine"
+},
+{
+"pageid": 23797577,
+"ns": 0,
+"title": "The Daily Telegraph"
+},
+{
+"pageid": 23998041,
+"ns": 0,
+"title": "Hank Green"
+},
+{
+"pageid": 24558256,
+"ns": 0,
+"title": "Styles and themes of Jane Austen"
+},
+{
+"pageid": 24646269,
+"ns": 0,
+"title": "Little, Brown Book Group"
+},
+{
+"pageid": 24913120,
+"ns": 0,
+"title": "Love, Lies and Lizzie"
+},
+{
+"pageid": 25011430,
+"ns": 0,
+"title": "Georgian society in Jane Austen's novels"
+},
+{
+"pageid": 25345811,
+"ns": 0,
+"title": "Eliza de Feuillide"
+},
+{
+"pageid": 25496585,
+"ns": 0,
+"title": "Pride and Prejudice and Zombies: Dawn of the Dreadfuls"
+},
+{
+"pageid": 26035749,
+"ns": 0,
+"title": "Richard Bentley (publisher)"
+},
+{
+"pageid": 26536200,
+"ns": 0,
+"title": "Telenovela"
+},
+{
+"pageid": 26606111,
+"ns": 0,
+"title": "Nathalia Dill"
+},
+{
+"pageid": 27113016,
+"ns": 0,
+"title": "Limelight (magazine)"
+},
+{
+"pageid": 28497848,
+"ns": 0,
+"title": "Mashup novel"
+},
+{
+"pageid": 28557753,
+"ns": 0,
+"title": "Goodnestone Park"
+},
+{
+"pageid": 29579574,
+"ns": 0,
+"title": "Lily James"
+},
+{
+"pageid": 33142996,
+"ns": 0,
+"title": "Lady Catherine de Bourgh"
+},
+{
+"pageid": 33217704,
+"ns": 0,
+"title": "Gabriela Duarte"
+},
+{
+"pageid": 33667105,
+"ns": 0,
+"title": "Mr William Collins"
+},
+{
+"pageid": 34260936,
+"ns": 0,
+"title": "Death Comes to Pemberley"
+},
+{
+"pageid": 35550954,
+"ns": 0,
+"title": "Jack Lowden"
+},
+{
+"pageid": 35894494,
+"ns": 0,
+"title": "Alessandra Negrini"
+},
+{
+"pageid": 36115576,
+"ns": 0,
+"title": "Rector (ecclesiastical)"
+},
+{
+"pageid": 36733028,
+"ns": 0,
+"title": "The Lizzie Bennet Diaries"
+},
+{
+"pageid": 37742289,
+"ns": 0,
+"title": "Edward Austen Knight"
+},
+{
+"pageid": 37816459,
+"ns": 0,
+"title": "Bennet family"
+},
+{
+"pageid": 38101506,
+"ns": 0,
+"title": "Plan of a Novel, According to Hints from Various Quarters"
+},
+{
+"pageid": 38298384,
+"ns": 0,
+"title": "Austenland (film)"
+},
+{
+"pageid": 38552516,
+"ns": 0,
+"title": "Trishna (TV series)"
+},
+{
+"pageid": 39727361,
+"ns": 0,
+"title": "Margaret Holford"
+},
+{
+"pageid": 39769201,
+"ns": 0,
+"title": "Death Comes to Pemberley (TV series)"
+},
+{
+"pageid": 40110067,
+"ns": 0,
+"title": "Pride and Prejudice (1967 TV series)"
+},
+{
+"pageid": 40547362,
+"ns": 0,
+"title": "Rodrigo Simas"
+},
+{
+"pageid": 40664347,
+"ns": 0,
+"title": "Thomas Egerton (publisher)"
+},
+{
+"pageid": 43866447,
+"ns": 0,
+"title": "Pride and Prejudice and Zombies (film)"
+},
+{
+"pageid": 44058237,
+"ns": 0,
+"title": "Henry Thomas Austen"
+},
+{
+"pageid": 44647451,
+"ns": 0,
+"title": "Susannah Fullerton"
+},
+{
+"pageid": 44741825,
+"ns": 0,
+"title": "Marriage settlement (England)"
+},
+{
+"pageid": 44916368,
+"ns": 0,
+"title": "Old Friends and New Fancies"
+},
+{
+"pageid": 45509656,
+"ns": 0,
+"title": "Daniel Nelson (Swedish composer)"
+},
+{
+"pageid": 45509678,
+"ns": 0,
+"title": "Stolthet och fördom"
+},
+{
+"pageid": 46293798,
+"ns": 0,
+"title": "Pride and Prejudice (1958 TV series)"
+},
+{
+"pageid": 46321714,
+"ns": 0,
+"title": "George Wickham"
+},
+{
+"pageid": 47868238,
+"ns": 0,
+"title": "Bennet (surname)"
+},
+{
+"pageid": 48455863,
+"ns": 0,
+"title": "Semantic Scholar"
+},
+{
+"pageid": 50176030,
+"ns": 0,
+"title": "Eligible (novel)"
+},
+{
+"pageid": 50807494,
+"ns": 0,
+"title": "Agatha Moreira"
+},
+{
+"pageid": 51447852,
+"ns": 0,
+"title": "Jane Austen's family and ancestry"
+},
+{
+"pageid": 52236040,
+"ns": 0,
+"title": "Darcy (surname)"
+},
+{
+"pageid": 52320239,
+"ns": 0,
+"title": "Bernie Su"
+},
+{
+"pageid": 53729166,
+"ns": 0,
+"title": "Natália do Vale"
+},
+{
+"pageid": 53972469,
+"ns": 0,
+"title": "Catharine, or The Bower"
+},
+{
+"pageid": 54705896,
+"ns": 0,
+"title": "Longbourn"
+},
+{
+"pageid": 54865369,
+"ns": 0,
+"title": "Godmersham Park"
+},
+{
+"pageid": 56826331,
+"ns": 0,
+"title": "Orgulho e Paixão"
+},
+{
+"pageid": 57344707,
+"ns": 0,
+"title": "Anna Austen Lefroy"
+},
+{
+"pageid": 58885776,
+"ns": 0,
+"title": "Jo Baker (novelist)"
+},
+{
+"pageid": 59050538,
+"ns": 0,
+"title": "Helen Jerome"
+},
+{
+"pageid": 59419613,
+"ns": 0,
+"title": "Joel Kim Booster"
+},
+{
+"pageid": 61362910,
+"ns": 0,
+"title": "American Book Review"
+},
+{
+"pageid": 61567612,
+"ns": 0,
+"title": "Stride & Prejudice"
+},
+{
+"pageid": 62631134,
+"ns": 0,
+"title": "George Austen (cleric)"
+},
+{
+"pageid": 63042235,
+"ns": 0,
+"title": "Elizabeth Refuses"
+},
+{
+"pageid": 64054538,
+"ns": 0,
+"title": "Standard Ebooks"
+},
+{
+"pageid": 65302072,
+"ns": 0,
+"title": "Dolly Alderton"
+},
+{
+"pageid": 65826989,
+"ns": 0,
+"title": "Emma Corrin"
+},
+{
+"pageid": 66838902,
+"ns": 0,
+"title": "James Austen"
+},
+{
+"pageid": 67733934,
+"ns": 0,
+"title": "Pride and Prejudice* (*sort of)"
+},
+{
+"pageid": 68113707,
+"ns": 0,
+"title": "Fire Island (film)"
+},
+{
+"pageid": 70835281,
+"ns": 0,
+"title": "Philadelphia Austen Hancock"
+},
+{
+"pageid": 75384196,
+"ns": 0,
+"title": "Causes of Jane Austen's death"
+},
+{
+"pageid": 77533962,
+"ns": 0,
+"title": "Margaret Macnamara (playwright)"
+},
+{
+"pageid": 78081864,
+"ns": 0,
+"title": "The Other Bennet Sister"
+},
+{
+"pageid": 78095893,
+"ns": 0,
+"title": "Pride and Prejudice (2026 TV series)"
+},
+{
+"pageid": 78874798,
+"ns": 0,
+"title": "Marriage in the works of Jane Austen"
+},
+{
+"pageid": 82830827,
+"ns": 0,
+"title": "The Other Bennet Sister (novel)"
+},
+{
+"pageid": 84633868,
+"ns": 0,
+"title": "The Murder of Mr. Wickham"
+}
+]
+}
+}
