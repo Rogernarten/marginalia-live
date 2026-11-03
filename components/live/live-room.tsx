@@ -39,7 +39,7 @@ function LiveRoom() {
         <FreshnessBar fresh={freshness(live.run, now)} connection={live.connection} />
       </div>
       <div className="mt-8 grid gap-10 lg:grid-cols-[20rem_1fr]">
-        <TopicPicker topics={live.topics} following={live.following} failed={live.followError} onChange={live.setFollow} />
+        <TopicPicker topics={live.topics} following={live.following} failed={live.followError} onChange={live.setFollow} onFollowAll={() => void live.followAll()} />
         <EditFeed edits={live.edits} arrived={live.arrived} topics={live.topics} followingCount={live.following?.size ?? null} now={now} />
       </div>
     </>

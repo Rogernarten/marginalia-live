@@ -93,8 +93,11 @@ export function useLive() {
 
   useEffect(() => {
     let wasLost = false;
+    let mounted = true;
+    // A new name each time: db.channel() hands back an existing channel with the same name,
+    // even one still closing from the last mount (React runs effects twice in development).
     const channel = db
-      .channel("live")
+      .channel(`live:${crypto.randomUUID()}`)
       .on("postgres_changes", { event: "INSERT", schema: "public", table: "edits" }, (payload) => {
         const edit = payload.new as Edit;
         setEdits((list) => (list && !list.some((e) => e.rev_id === edit.rev_id) ? [edit, ...list].sort(newestFirst).slice(0, FEED_SIZE) : list));
@@ -103,7 +106,10 @@ export function useLive() {
       .on("postgres_changes", { event: "INSERT", schema: "public", table: "worker_runs" }, (payload) => {
         setRun(payload.new as Run);
       })
-      .subscribe((status) => {
+      .subscribe((status, err) => {
+        if (err) console.error(`[live] realtime ${status}: ${err.message}`);
+        // Closing this channel on unmount isn't a lost connection.
+        if (!mounted) return;
         if (status === "SUBSCRIBED") {
           setConnection("live");
           // Back after a drop: fetch what was pushed while we weren't listening.
@@ -115,6 +121,7 @@ export function useLive() {
         }
       });
     return () => {
+      mounted = false;
       void db.removeChannel(channel);
     };
   }, [db, load]);
@@ -144,7 +151,23 @@ export function useLive() {
     await loadEdits().catch(() => setLoadError(true));
   }
 
-  return { topics, following, edits, run, arrived, connection, loadError, followError, reload: load, setFollow };
+  /** Follows every topic not followed yet, in one insert. */
+  async function followAll() {
+    const missing = (topics ?? []).map((t) => t.id).filter((id) => !following?.has(id));
+    if (!missing.length) return;
+    setFollowError(null);
+    setFollowing((s) => new Set([...(s ?? []), ...missing]));
+    const { error } = await db.from("follows").insert(missing.map((topic_id) => ({ topic_id })));
+    if (error) {
+      console.error("[live] couldn't follow all:", error.message);
+      setFollowing((s) => new Set([...(s ?? [])].filter((id) => !missing.includes(id))));
+      setFollowError("all");
+      return;
+    }
+    await loadEdits().catch(() => setLoadError(true));
+  }
+
+  return { topics, following, edits, run, arrived, connection, loadError, followError, reload: load, setFollow, followAll };
 }
 
 /** The current time, updated every second, so "4 seconds ago" counts up on its own. */
