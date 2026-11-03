@@ -105,6 +105,11 @@ export function useLive() {
 
     // realtime-js rejoins by itself after an error or a timeout, but not when the server closes
     // the channel (phx_close, seen once in testing). Then join again on a new channel.
+    // When the socket comes back (after sleep, or a dropped network), realtime-js rejoins with the
+    // token it last had, expired by then ("InvalidJWTToken: Token has expired 516 seconds ago"),
+    // and only asks for a new one at the next heartbeat. So when the server refuses the token,
+    // ask now; the library's next rejoin carries it. (Not a new channel per error: while the
+    // socket is down, old channels can't be removed and all of them rejoin at once later.)
     function joinAgain(after: number) {
       window.clearTimeout(retry);
       retry = window.setTimeout(() => {
@@ -152,6 +157,9 @@ export function useLive() {
           setConnection("lost");
           wasLost = true;
           if (status === "CLOSED") joinAgain(2000);
+          if (status === "CHANNEL_ERROR" && /token|jwt/i.test(err?.message ?? "")) {
+            db.realtime.setAuth().catch((e) => console.error("[live] couldn't get a new token for Realtime:", (e as Error).message));
+          }
         }
       });
     }
