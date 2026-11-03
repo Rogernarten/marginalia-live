@@ -11,7 +11,7 @@ edits to their pages arrive as they happen, without refreshing.
 
 ## How data moves
 
-Drawn before any code was written ([AGENTS.md](AGENTS.md) has what breaks if a part changes).
+Drawn before any code was written, in the [first commit](https://github.com/Rogernarten/marginalia-live/commit/11a2ec7); since then only the topic count changed, when England was added. [AGENTS.md](AGENTS.md) has what breaks if a part changes.
 
 ```mermaid
 flowchart LR
@@ -19,7 +19,7 @@ flowchart LR
   CRON["Supabase Cron<br/>every 10 s"]
   FN["Edge Function<br/>wiki-worker<br/>(secret key, on Supabase)"]
   subgraph DB["Supabase Postgres"]
-    TOP["topics<br/>10 hub articles"]
+    TOP["topics<br/>11 hub articles"]
     TP["topic_pages<br/>pages linked from each hub"]
     ED["edits<br/>one row per edit in a topic"]
     RUN["worker_runs<br/>one row per run"]
@@ -45,8 +45,8 @@ flowchart LR
 
 | | |
 |---|---|
-| **Source** | Wikipedia's [recent changes](https://www.mediawiki.org/wiki/API:RecentChanges), no key. English Wikipedia makes about 80 article edits a minute; about 16 an hour land in these 10 topics. Two calls compared in [docs/source.md](docs/source.md). |
-| **Topics** | A hub article and every article it links to (Wikipedia's "Related changes"): 10 hubs, about 7,300 pages. |
+| **Source** | Wikipedia's [recent changes](https://www.mediawiki.org/wiki/API:RecentChanges), no key. English Wikipedia makes about 80 article edits a minute. In the hour measured at 2 PM on 3 Nov, 34 landed in the first 10 topics (17 in London); England, added after, gets about as many as London. Two calls compared in [docs/source.md](docs/source.md). |
+| **Topics** | A hub article and every article it links to (Wikipedia's "Related changes"): 11 hubs, from *Pride and Prejudice* (282 pages) to London (1,939). "Follow all" follows them in one go. |
 | **Worker** | [`supabase/functions/wiki-worker`](supabase/functions/wiki-worker): an Edge Function that Supabase Cron calls every 10 seconds. It reads changes since the last cursor, keeps those to pages in a topic, inserts only edits it hasn't saved (`on conflict (rev_id) do nothing`) and records every run in `worker_runs`, failed ones too. It writes with the secret key Supabase gives it on its servers. |
 | **Data** | [Migrations](supabase/migrations/): `topics`, `topic_pages`, `follows`, `edits`, `worker_runs`, RLS on all five. You see only your own follows, and only edits in topics you follow: the page never filters, RLS does. |
 | **Live page** | Supabase Realtime pushes new edits and new runs. Freshness from the newest run, counting up every second: **fresh** (checked under 35 s ago), **stale** (three missed runs: says when the edits are from), **down** (the last run failed: says why), plus loading, not started, no topics yet, no edits yet, and a dropped Realtime connection. |
@@ -69,6 +69,6 @@ key never leaves Supabase.
 ## Free tier
 
 - Edge Functions: a run every 10 seconds is about 260,000 calls a month (the free plan has 500,000).
-- Realtime: only new edits (about 16 an hour) and one run row every 10 seconds are pushed, so an
+- Realtime: only new edits (about 50 an hour across all topics) and one run row every 10 seconds are pushed, so an
   open page gets about 6 messages a minute.
 - The tables stay small: runs older than a day and edits older than a week are deleted hourly.

@@ -17,7 +17,8 @@ Ship · Assignment 5: Live Data System.
 
 ## Data flow
 
-Drawn before any code was written. Each arrow says what one part sends to the next.
+Drawn before any code was written (commit `11a2ec7`); since then only the topic count changed, when
+England was added. Each arrow says what one part sends to the next.
 
 ```mermaid
 flowchart LR
@@ -25,7 +26,7 @@ flowchart LR
   CRON["Supabase Cron<br/>every 10 s"]
   FN["Edge Function<br/>wiki-worker<br/>(secret key, on Supabase)"]
   subgraph DB["Supabase Postgres"]
-    TOP["topics<br/>10 hub articles"]
+    TOP["topics<br/>11 hub articles"]
     TP["topic_pages<br/>pages linked from each hub"]
     ED["edits<br/>one row per edit in a topic"]
     RUN["worker_runs<br/>one row per run"]
